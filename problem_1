@@ -1,0 +1,35 @@
+# Find the sum of all the multiples of 3 or 5 below 1000.
+
+counter = 1
+ary = []
+while counter < 1000 do
+   ary << counter
+  counter +=1
+end
+
+five_total = 0
+three_total = 0
+double_total = 0
+
+ary.each do |x|
+  if x % 3 == 0
+    three_total = x + three_total
+  end
+end
+
+ary.each do |x|
+  if x % 5 == 0
+    five_total = x + five_total
+  end
+end
+
+ary.each do |x|
+  if x % 15 == 0
+    double_total = x + double_total
+  end
+end 
+
+
+total = five_total + three_total - double_total 
+
+puts "The final total of all the multiples of 3 or 5 below 1000 is: #{total}" 
